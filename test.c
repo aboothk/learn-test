@@ -1,5 +1,6 @@
 #include<stdio.h>
 void main()
+<<<<<<< HEAD
 {  
      struct Node
       {
@@ -25,4 +26,16 @@ void main()
    
    
     
+=======
+{
+    int a[59];
+    for(int i=0;i<58;i++)
+    {
+        a[i]=i;
+    }
+    char b[]="1234";
+    printf("%c",b[2]);
+    printf("%d",a[2]);
+    printf("%d", a[(unsigned char) b[2]]);
+>>>>>>> 87a71e96c379a0b63fc536a533716d4cac099bc0
 }
