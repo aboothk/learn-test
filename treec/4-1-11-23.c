@@ -68,32 +68,32 @@ tree *Singright(tree * K1)
     K2->lchild=K1;
     K1->height=Max(Height(K1->lchild),Height(K1->rchild)) +1;
     K2->height=Max(Height(K2->lchild),K1->height) +1;
-    return K1;
+    return K2;
 }
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+//                K3                                             K2                   
+//               / \                                            /    \  
+//              /   \                                          /      \ 
+//             K1    DD                                       K1        K3
+//            / \    DD  --------------------->              /  \      /  \ 
+//           /   \                                          /    \    /    \ 
+//          AA    K2                                       AA    BB  CC     DD
+//          AA   / \                                       AA    BB  CC     DD
+//              /   \ 
+//             BB   CC
+//             BB   CC
+//左右
+//              K1                                                  K2
+//             /  \                                                /   \ 
+//            /    \                                              /     \ 
+//           AA     K2------------------------->                K1       K3
+//           AA    /  \                                         / \     /  \ 
+//                /    \                                       /   \   /    \ 
+//               K3    DD                                     AA   BB CC    DD
+//              / \    DD                                     AA   BB CC    dD
+//             /   \ 
+//            BB   CC
+//            BB   CC
+//右左
 tree *doubleleft(tree *K3)
 {
      K3->lchild=Singright(K3->lchild);
@@ -158,13 +158,15 @@ void main()
 {     //int s;
       //scanf("%d",&s);
       tree * Tree;
-      Tree=NULL;
+      Tree=malloc(sizeof(tree));
       int s[8]={2,1,4,5,9,3,6,7};
-      for(int j=0;j<8;j++)
+      Tree->element=s[0];
+      Tree->height=0;
+      Tree->lchild=NULL;
+      Tree->rchild=NULL;
+      for(int j=1;j<8;j++)
       {
          Tree=insert(s[j],Tree);
-         if(j==4)
-           printf("%d",Tree->rchild->element);
       }
       printree(Tree);
       
