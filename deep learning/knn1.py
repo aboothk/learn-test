@@ -26,7 +26,6 @@ def kNN_classify(k,dis,X_train,x_train,Y_test):
             sortedClassCount = sorted(classCount.items(),key=operator.itemgetter(1),reverse=True)
             labellist.append(sortedClassCount[0][0])
         return np.array(labellist)
-        '''wwfa'''
 
 if __name__=='__main__':
     group,labels =createDataset()
