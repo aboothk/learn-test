@@ -62,6 +62,7 @@ X_train_folds=[]
 y_train_folds=[]
 indices=np.array_split(np.arange(num_training),indices_or_sections=num_folds)
 for i in indices:
+<<<<<<< HEAD
     X_train_folds.append(X_train[i])
 y_train_folds.append(y_train[i])
 k_to_accuracies={}
@@ -98,3 +99,6 @@ plt.title('Cross-validation on k')
 plt.xlabel('k')
 plt.ylabel('Cross-validation accuracy')
 plt.show()
+=======
+    X_train_folds.append(X_train[i])
+>>>>>>> 8da8a0a1e9d47786795f140b1583078ca75fe0ae
